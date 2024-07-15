@@ -60,25 +60,23 @@ const MyFlashcardComponent = () => {
             });
         };
     }, []);
-  return (
-      <FlashCardArray
-          label={   <div className="labelContainer">
-              <div>
-                  <p style={{ margin: 0 }}>M3 - H1</p>
-              </div>
-          </div>}
-          cards={flashcards}
-          showBookMark={true}
-          controls={true}
-          showCount={true}
-          autoPlay={true}
-          timerDuration={3}
-          onCardChange={(id, index) => console.log(`Card change detected: ID ${id}, Index: ${index}`)}
-          onCardFlip={(id, index, state) => console.log(`Card flipped: ID ${id}, Index: ${index}, Flipped: ${state}`)}
 
-          // Other props...
-      />
-  );
+    return (
+        <div className="title" >
+            <p className="title_grade">중3 - 고1</p>
+            <FlashCardArray
+                cards={flashcards}
+                controls={true}
+                showCount={true}
+                showBookMark={true}
+                timerDuration={3}
+                onCardChange={(id, index) => console.log(`Card change detected: ID ${id}, Index: ${index}`)}
+                onCardFlip={(id, index, state) => console.log(`Card flipped: ID ${id}, Index: ${index}, Flipped: ${state}`)}
+
+                // Other props...
+            />
+        </div>
+    );
 };
 
 export default MyFlashcardComponent;
